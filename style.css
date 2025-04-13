@@ -1,11 +1,48 @@
-.game-canvas {
+.game-title {
 
+}
+
+.players {
+
+}
+
+.player-name-label {
+
+}
+
+.player-name {
+
+}
+
+.buttons {
+
+}
+
+.start-button {
+
+}
+
+.reset-Button {
+
+}
+
+.game-canvas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 80px 80px 80px
 }
 
 .game-square {
+  border-style: solid;
+  border-color: blue;
+  border-width: 1px;
 
 }
 
-#restart-Button {
+.messages {
 
+}
+
+.message {
+  
 }
