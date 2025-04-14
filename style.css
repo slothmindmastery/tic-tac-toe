@@ -1,4 +1,3 @@
-/* === Global === */
 * {
   box-sizing: border-box;
 }
@@ -11,7 +10,6 @@ body {
   background-color: #f9f9f9;
 }
 
-/* === Typography & Messaging === */
 .game-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -29,7 +27,6 @@ body {
   color: #333;
 }
 
-/* === Players Input === */
 .players-container {
   display: flex;
   gap: 1rem;
@@ -37,7 +34,7 @@ body {
   justify-content: center;
 }
 
-.player-input {
+.player-one-input, .player-two-input {
   padding: 0.4rem;
   font-size: 1rem;
   border-radius: 4px;
@@ -46,11 +43,10 @@ body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.player-input::placeholder {
+.player-one-input::placeholder, .player-two-input::placeholder {
   text-align: center;
 }
 
-/* === Game Layout === */
 .game-board-wrapper {
   position: relative;
   display: inline-block;
@@ -65,7 +61,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 255, 0.2);
 }
 
-/* === Squares === */
 .game-square {
   width: 80px;
   height: 80px;
@@ -84,7 +79,6 @@ body {
   background-color: #f0f8ff;
 }
 
-/* === Overlay === */
 .game-overlay {
   position: absolute;
   top: 0;
@@ -110,7 +104,6 @@ body {
   pointer-events: none;
 }
 
-/* === Buttons === */
 .start-button,
 .reset-button,
 .play-again-button {
@@ -148,9 +141,9 @@ body {
 
 .play-again-button:hover {
   background-color: #43a047;
+  transform: scale(1.05);
 }
 
-/* === Scoreboard === */
 .scoreboard {
   display: flex;
   gap: 2rem;
@@ -159,12 +152,11 @@ body {
   justify-content: center;
 }
 
-.score {
+.player-one-score, .player-two-score {
   font-weight: bold;
   color: #444;
 }
 
-/* === Win & Draw Effects === */
 .win-effect {
   background-color: lightgreen;
   font-weight: bold;
@@ -192,7 +184,17 @@ body {
   100% { transform: scale(1); }
 }
 
-/* === Bottom Bar === */
+.game-square:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
+
+.game-square.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .bottom-bar {
   margin-top: 1.5rem;
   display: flex;
@@ -201,7 +203,6 @@ body {
   gap: 1rem;
 }
 
-/* === Responsive === */
 @media (max-width: 500px) {
   .game-board-container {
     grid-template-columns: repeat(3, 60px);
@@ -223,7 +224,6 @@ body {
   }
 }
 
-/* === Accessibility === */
 button:focus,
 input:focus {
   outline: 2px solid steelblue;
